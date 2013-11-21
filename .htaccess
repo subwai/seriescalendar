@@ -1,0 +1,23 @@
+AddType application/font-woff woff
+
+RewriteEngine On
+
+#Rewrites everything that doesn't have an extension
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !\.[^/]+$
+RewriteRule ^Application/(.*)$ Framework/Bootstrap/Php.php?uri=$1 [QSA,L]
+
+#Rewrites everything that ends with .css
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} \.css$
+RewriteRule ^Application/(.*)$ Framework/Bootstrap/Css.php?uri=$1 [QSA,L]
+
+#Rewrites everything that doesn't have a file at the requested path
+#Throw a 404 rather than a blank page for config in order to confuse malicious users
+RewriteCond %{REQUEST_FILENAME} !-f [OR]
+RewriteCond %{REQUEST_FILENAME} config\.php
+RewriteRule ^Application/(.*)$ Application/HttpError/404.php?uri=$1 [QSA,L]
+
+#Rewrites everything that does not have a file, ending with .php, at the requested path
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ Application/$1 [QSA,L]

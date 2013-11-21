@@ -1,0 +1,73 @@
+body {
+  background-color: #333;
+  background: url("/Content/Background/seamless_pattern.jpg") repeat;
+}
+.navbar-static-top {
+  margin-bottom: 19px;
+}
+
+.depth {
+    display: block;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    position: relative;
+}
+
+.depth:before, .depth:after {
+    content: attr(title);
+    color: rgba(255,255,255,.3);
+    position: absolute;
+}
+
+.depth:before { top: 1px; left: 1px }
+.depth:after  { top: 2px; left: 2px }
+
+.thecalendar > .panel-heading {
+  color: #FFFFFF;
+  background-color: #98ACB8;
+  border-color: #ddd;
+  background: url("/Content/Image/dottile.png") repeat;
+  background-size: 10%;
+  position: relative;
+
+  &.green:after,
+  &.yellow:after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  &.green:after { background-color: rgba(0,255,0,.3); }
+  &.yellow:after {  background-color: rgba(255,255,0,.3); }
+}
+
+.facebook-profile {
+  .thumbnail {
+    overflow: auto;
+    .profile-pic {
+      width: 40px;
+      height: 40px;
+      margin-right: 8px;
+    }
+    .profile-details {
+      height: 40px;
+      p {
+        font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+        font-size: 11px;
+        margin: 0;
+      }
+      .fb-name {
+        color: #3b5998;
+        font-weight: bold;
+        margin: 2px 0 4px;
+      }
+    }
+  }
+}
+
+.search-results {
+  margin-top: 10px;
+}
