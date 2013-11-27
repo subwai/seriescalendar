@@ -1,10 +1,29 @@
 <?php
+require_once "./Framework/Interface/ViewInterface.php";
+require_once "./Framework/Result/Result.php";
 require_once "./Framework/Result/ViewResult.php";
 require_once "./Framework/Result/JsonResult.php";
 
 class Controller
 {
+    public $Config;
     public $MasterModel;
+
+    public function __construct($config) {
+        $this->Config = $config;
+        /** Dynamic HTML minification
+         *  decreases performance by 1-3ms, and probably isn't giving it back in load time anyways...
+         *  But it looks pretty! **/
+        if (!$this->Config["debug"]) {
+            ob_start(function($buffer) {
+                // 1 - after tags, 2 - before tags, 3 - multiple whitespace, 4 - after <script> tags, 5 - before </script> tags
+                $search = array('/\>[^\S\r\n]{2,}/s','/[^\S\r\n]{2,}\</s','/(\s)+/s','/\<script\>[^\S]+/s','/[^\S]+\<\/script\>/s');
+                $replace = array('>','<','\\1','<script>','</script>');
+                $buffer = preg_replace($search, $replace, $buffer);
+                return $buffer;
+            });
+        }
+    }
 
     function __call($method, $parameters) {
         Router::Error(404, "Action", $method);
@@ -22,7 +41,7 @@ class Controller
     public function onResultExecuted() {
     }
 
-    public function View($model = array(), $viewName = null, $masterName = null) {
+    public function View($model = array(), $viewName = null, $masterView = null) {
         $viewName = is_null($viewName) ? ucfirst($_GET["view"]) : $viewName;
         $controllerName = ucfirst($_GET["controller"]);
 
@@ -34,19 +53,28 @@ class Controller
         $viewFile .= ".php";
 
         if (file_exists($viewFile)) {
-            FrameworkHelper::IncludeFiles("./Application/Shared/Interface");
             require $viewFile;
             $view = new $viewName($model);
-            $interfaces = class_implements($view);
-            $masterName = is_null($masterName) ? substr(reset($interfaces), 1) : $masterName;
-            return new ViewResult($this->MasterModel, $view, $masterName);
+            $masterView = is_null($masterView) ? $view->MasterView : $masterView;
+            return new ViewResult($view, $viewName, $controllerName, $masterView, $this->MasterModel);
         } else {
             Router::Error(404, "View", $viewName);
         }        
     }
 
-    public function Json($model = array()) {
+    public function Redirect($action, $controller = null, $args = null) {
+        $protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https' : 'http';
+        $controller = is_null($controller) ? $_GET["controller"] : $controller;
+        $action = strtolower($action);
+        $argStr = is_null($args) ? "" : implode("/", $args);
+        header(sprintf("Location: %s://%s/%s/%s/%s", $protocol, $_SERVER["HTTP_HOST"], $controller, $action, $argStr));
+    }
+
+    public function Json($model = array(), $success = true) {
         header('Content-type: application/json');
+        if (!$success) {
+            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
+        }
         return new JsonResult($model);
     }
 

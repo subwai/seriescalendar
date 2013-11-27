@@ -51,10 +51,15 @@ class Router {
 
             if ($route->paramCountMatch($request_params)) { 
                 foreach ($route->getParameters() as $param_key => $param_container) {
+                    $match = false;
                     foreach ($param_container as $param) {
-                        if (!self::EvaluateParameter($param, $request_params[$param_key], $map)) {
-                            continue 3;
+                        if (self::EvaluateParameter($param, $request_params[$param_key], $map)) {
+                            $match = true;
                         }
+                    }
+                    
+                    if (!$match) {
+                        continue 2;
                     }
                 }
 
@@ -77,7 +82,11 @@ class Router {
             case Parameter::$States['PREREQUISITE_NAME']:
 
                 if ($param->getPrerequisite() == $current_request_param) {
-                    $map[$param->getName()] = $current_request_param;
+                    if ($param->getName() == "area") {
+                        $map["area"][] = $current_request_param;
+                    } else {
+                        $map[$param->getName()] = $current_request_param;
+                    }
                 } else {
                     return false;
                 }
@@ -86,9 +95,7 @@ class Router {
 
             case Parameter::$States['PREREQUISITE_NO_NAME']:
 
-                if ($param->getPrerequisite() == $current_request_param) {
-                    $map["area"][] = $current_request_param;
-                } else {
+                if ($param->getPrerequisite() != $current_request_param) {
                     return false;
                 }
 

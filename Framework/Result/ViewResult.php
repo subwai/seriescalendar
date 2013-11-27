@@ -1,20 +1,23 @@
 <?php
 
-class ViewResult {
+class ViewResult implements Result {
 
-    private $Model;
     private $View;
-    private $MasterName;
+    private $ViewName;
+    private $ControllerName;
+    private $MasterView;
+    private $MasterModel;
 
-    public function __construct($model, $view, $masterName) {
-        $this->Model = $model;
+    public function __construct($view, $viewName, $controllerName, $masterView, $masterModel) {
         $this->View = $view;
-        $this->MasterName = $masterName;
+        $this->ViewName = $viewName;
+        $this->ControllerName = $controllerName;
+        $this->MasterView = $masterView;
+        $this->MasterModel = $masterModel;
     }
 
     public function Execute() {
-        require "./Application/Shared/".$this->MasterName.".php";
-        new $this->MasterName($this->Model, $this->View);
+        include "./Application/Shared/".$this->MasterView.".php";
     }
 }
 

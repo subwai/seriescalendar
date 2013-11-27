@@ -8,10 +8,10 @@ $name = isset($_GET["HttpErrorName"]) ? $_GET["HttpErrorName"] : $_GET["uri"];
 <html>
 <head>
     <title>Error - 404</title>
-    <link rel="stylesheet" type="text/css" href="/Content/Css/leaguestats.css" />
+    <link rel="stylesheet" type="text/css" href="/Assets/Css/leaguestats.css" />
 <style>
 html { 
-    background:url("/Content/Background/404.jpg") no-repeat top center;
+    background:url("/Assets/Background/404.jpg") no-repeat top center;
     background-color:black;color:#000;
 } 
 #fourohfour-wrapper {

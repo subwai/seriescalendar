@@ -1,6 +1,6 @@
 <?php
 
-class JsonResult {
+class JsonResult implements Result {
 
     private $Model;
 

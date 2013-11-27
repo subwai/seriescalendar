@@ -20,20 +20,20 @@ class FacebookManager {
         return static::$instance;
     }
 
-    public function FacebookInstance() {
+    public static function FacebookInstance() {
         return FacebookManager::getInstance()->Facebook;
     }
 
-    public function FacebookUser() {
+    public static function FacebookUser() {
         return FacebookManager::getInstance()->FacebookUser;
     }
 
-    public function setFacebookInstance($asd) {
+    public static function setFacebookInstance($asd) {
         $test = FacebookManager::getInstance();
         $test->Facebook = $asd;
     }
 
-    public function setFacebookUser($user) {
+    public static function setFacebookUser($user) {
         $test = FacebookManager::getInstance();
         $test->FacebookUser = $user;
     }
