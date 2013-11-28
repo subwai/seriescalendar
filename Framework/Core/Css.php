@@ -1,8 +1,8 @@
 <?php
 chdir('../../');
 
-require_once "./Framework/Router.php";
-require_once "./Framework/Function/Compiler/LessCompile.php";
+require_once "Framework/Router.php";
+require_once "Framework/Function/Compiler/LessCompile.php";
 
 $filePath = "Application/".substr($_GET["uri"], 0, strrpos($_GET["uri"], "/"));
 $fileName = strstr(strrchr($_GET["uri"], "/"), ".css", true);

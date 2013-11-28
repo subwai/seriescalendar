@@ -1,8 +1,8 @@
 <?php
-require_once "./Framework/Interface/ViewInterface.php";
-require_once "./Framework/Result/Result.php";
-require_once "./Framework/Result/ViewResult.php";
-require_once "./Framework/Result/JsonResult.php";
+require_once "Framework/Interface/ViewInterface.php";
+require_once "Framework/Result/Result.php";
+require_once "Framework/Result/ViewResult.php";
+require_once "Framework/Result/JsonResult.php";
 
 class Controller
 {

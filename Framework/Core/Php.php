@@ -1,7 +1,7 @@
 <?php
 chdir('../../');
 
-require_once "./Framework/Router.php";
+require_once "Framework/Router.php";
 
 header('Content-type: text/html; charset=utf-8');
 

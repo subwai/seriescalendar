@@ -1,5 +1,5 @@
 <?php
-require_once "./Application/Areas/ApplicationController.php";
+require_once "Application/Areas/ApplicationController.php";
 
 class HomeController extends ApplicationController {
 

@@ -1,6 +1,6 @@
 <?php
-require_once "./Framework/Helper/FrameworkHelper.php";
-require_once "./Framework/Route.php";
+require_once "Framework/Helper/FrameworkHelper.php";
+require_once "Framework/Route.php";
 
 class Router {
     private static $routes;
@@ -22,7 +22,7 @@ class Router {
     }
 
     public static function CalculateMapping($request_params) {
-        require "./routes.php";
+        require "Application/routes.php";
 
         $map = self::FetchMapFromMatchingRoute($request_params);
 
