@@ -15,6 +15,21 @@ class Controller
     public function __construct() {
         $this->Config = parse_ini_file("quartz.ini", true);
 
+        switch ($this->Config["environment"])
+        {
+            case 'development':
+                error_reporting(E_ALL);
+            break;
+        
+            case 'testing':
+            case 'production':
+                error_reporting(0);
+            break;
+
+            default:
+                exit('The application environment is not set correctly.');
+        }
+
         /** Dynamic HTML minification
          *  decreases performance by 1-3ms, and probably isn't giving it back in load time anyways...
          *  But it looks pretty! **/
