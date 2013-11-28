@@ -19,11 +19,11 @@ if (Router::CalculateMapping($uri_params)) {
 
     $controllerName = ucwords($_GET["controller"]);
     $actionName = ucwords($_GET["view"]);
-    $controllerFile = "./Application".ROOTAREA."/Controller/".$controllerName."Controller.php";
+    $controllerFile = "./Application".ROOTAREA."/Controller/".$controllerName.".php";
     
     if (file_exists($controllerFile)) {
         require $controllerFile;
-        $controller = $controllerName."Controller";
+        $controller = $controllerName;
         $app = new $controller();
         $app->onActionExecuting();
         $result = $app->$actionName();
