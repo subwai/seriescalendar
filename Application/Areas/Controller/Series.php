@@ -1,8 +1,8 @@
 <?php
 require_once "./Application/Areas/ApplicationController.php";
-require_once "./Application/Areas/Model/View/SeriesViewModel.php";
+require_once "./Application/Areas/Model/View/SeriesView.php";
 
-class SeriesController extends ApplicationController {
+class Series extends ApplicationController {
 
     function Index() {
 
@@ -20,15 +20,15 @@ class SeriesController extends ApplicationController {
         );
 
         $stmt = $this->DatabaseMgr->Execute("SELECT *, date_format(Airs_Time, '%H:%i') as Airs_Time FROM custom_series WHERE facebook = ".FacebookManager::FacebookUser(), MAIN);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "CustomSeriesModel");
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "CustomSeries");
         $model->series = $stmt->fetchAll();
 
         return $this->View($model);
     }
 
     function Create() {
-        $model = new SeriesViewModel();
-        $model->Series = new CustomSeriesModel();
+        $model = new SeriesView();
+        $model->Series = new CustomSeries();
         $model->Series->Airs_DayOfWeek = 1;
 
         if (isset($_POST["submit"])) {
@@ -64,7 +64,7 @@ class SeriesController extends ApplicationController {
     function Edit() {
 
         $stmt = $this->DatabaseMgr->Prepare("SELECT *, date_format(Airs_Time, '%H:%i') as Airs_Time FROM custom_series WHERE id = :id", MAIN);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "CustomSeriesModel");
+        $stmt->setFetchMode(PDO::FETCH_CLASS, "CustomSeries");
         $stmt->execute(array("id" => $_GET["id"]));
         $series = $stmt->fetch();
 
@@ -77,7 +77,7 @@ class SeriesController extends ApplicationController {
     }
 
     function Save() {
-        $series = new CustomSeriesModel();
+        $series = new CustomSeries();
 
         try {
             if (isset($_POST["SeriesName"])) { $series->SeriesName = $_POST["SeriesName"]; }

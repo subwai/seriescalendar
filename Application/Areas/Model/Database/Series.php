@@ -1,6 +1,6 @@
 <?php
 
-class SeriesModel {
+class Series {
     public $id;
     public $SeriesName;
     public $Airs_Time;

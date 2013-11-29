@@ -48,10 +48,28 @@
 			}
 		},
 		{
-			"file": "Application/Areas/View/Home/Index.php",
+			"file": "config.rb",
 			"settings":
 			{
-				"buffer_size": 5036,
+				"buffer_size": 963,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 90 files for \"<<<<<<< HEAD\"\n\nD:\\inetpub\\wwwroot\\Seriescalendar\\www\\\\Application\\Assets\\Css\\main.css:\n    1: <<<<<<< HEAD\n    2  /* line 1, D:/inetpub/wwwroot/Seriescalendar/www/Application/Assets/Sass/main.scss */\n    3  body { background-color: #333; background: url(\"/Assets/Background/seamless_pattern.jpg\") repeat; }\n\nD:\\inetpub\\wwwroot\\Seriescalendar\\www\\\\Application\\Assets\\Sass\\main.scss:\n    1: <<<<<<< HEAD\n    2  body {\n    3    background-color: #333;\n\n2 matches across 2 files\n",
+			"settings":
+			{
+				"buffer_size": 499,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "Application/Assets/Sass/main.scss",
+			"settings":
+			{
+				"buffer_size": 3446,
 				"line_ending": "Unix"
 			}
 		},
@@ -60,22 +78,6 @@
 			"settings":
 			{
 				"buffer_size": 231,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Application/Areas/Model/Database/SeriesModel.php",
-			"settings":
-			{
-				"buffer_size": 736,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Framework/Controller.php",
-			"settings":
-			{
-				"buffer_size": 3527,
 				"line_ending": "Unix"
 			}
 		}
@@ -99,16 +101,24 @@
 				"Git: Add..."
 			],
 			[
+				"git add .",
+				"Git: Add..."
+			],
+			[
+				"diff all",
+				"Git: Diff All"
+			],
+			[
+				"diff",
+				"Git: Diff Current File"
+			],
+			[
 				"check",
 				"Git: Checkout Current File"
 			],
 			[
 				"log",
 				"Git: Log Current File"
-			],
-			[
-				"diff",
-				"Git: Diff Current File"
 			],
 			[
 				"rena",
@@ -155,9 +165,20 @@
 	},
 	"file_history":
 	[
+		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Assets/Css/main.css",
+		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Areas/View/Home/Index.php",
+		"/D/inetpub/wwwroot/Seriescalendar/www/Framework/Manager/DatabaseManager.php",
+		"/D/inetpub/wwwroot/Seriescalendar/www/Framework/Router.php",
+		"/D/inetpub/wwwroot/Seriescalendar/www/Framework/Route.php",
+		"/D/inetpub/wwwroot/Seriescalendar/www/Framework/Controller.php",
+		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Shared/Master.php",
+		"/D/inetpub/wwwroot/Seriescalendar/www/Application/HttpError/404.php",
+		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Areas/ApplicationController.php",
+		"/D/inetpub/wwwroot/Seriescalendar/www/.htaccess",
+		"/D/inetpub/wwwroot/Seriescalendar/www/.gitignore",
+		"/D/inetpub/wwwroot/Seriescalendar/www/web.config",
 		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Service/SeriesUpdaterService.php",
 		"/D/inetpub/wwwroot/Seriescalendar/seriescalendar.ini",
-		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Areas/ApplicationController.php",
 		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Areas/Controller/SeriesController.php",
 		"/D/inetpub/wwwroot/Seriescalendar/www/Framework/Manager/ErrorManager.php",
 		"/D/inetpub/wwwroot/Seriescalendar/www/Framework/Manager/InfoManager.php",
@@ -167,7 +188,6 @@
 		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Areas/Update/Controller/BothController.php",
 		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Service/EpisodeUpdaterService.php",
 		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Areas/Controller/Edit_calendarController.php",
-		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Areas/View/Home/Index.php",
 		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Areas/Controller/HomeController.php",
 		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Areas/View/Series/Index.php",
 		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Areas/View/Series/Create.php",
@@ -205,14 +225,8 @@
 		"/D/Users/Adam/Desktop/updates_all/updates_all.xml",
 		"/D/Users/Adam/Desktop/test.sql",
 		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Areas/Series/UpdateController.php",
-		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Assets/Css/main.css",
-		"/D/inetpub/wwwroot/Seriescalendar/www/Application/HttpError/404.php",
-		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Shared/Master.php",
-		"/D/inetpub/wwwroot/Seriescalendar/www/.gitignore",
 		"/D/inetpub/wwwroot/Seriescalendar/www/config.rb",
 		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Content/Sass/main.scss",
-		"/D/inetpub/wwwroot/Seriescalendar/www/Framework/Controller.php",
-		"/D/inetpub/wwwroot/Seriescalendar/www/Framework/Router.php",
 		"/D/inetpub/wwwroot/Seriescalendar/www/Framework/Parameter.php",
 		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Areas/Model/View/CalendarViewModel.php",
 		"/D/inetpub/wwwroot/Seriescalendar/www/Application/Areas/Episodes/UpdateController.php",
@@ -263,6 +277,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"<<<<<<< HEAD",
+			"./",
+			"<<<<<<< HEAD",
 			"row",
 			"release_week_day",
 			"release_time",
@@ -397,7 +414,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -434,19 +451,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "Application/Areas/View/Home/Index.php",
+					"file": "config.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5036,
+						"buffer_size": 963,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1157,
-								1157
+								133,
+								133
 							]
 						],
 						"settings":
@@ -558,18 +575,307 @@
 							"remote_loading": false,
 							"sublime_auto_complete": true,
 							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 405.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 499,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										118,
+										130
+									],
+									[
+										413,
+										425
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								420,
+								420
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"detect_indentation": false,
+							"incomplete_sync": null,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"sublime_auto_complete": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Application/Assets/Sass/main.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3446,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3250,
+								3250
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"sublime_auto_complete": true,
+							"synced": false,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2250.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "Framework/Result/JsonResult.php",
 					"semi_transient": false,
 					"settings":
@@ -591,174 +897,6 @@
 							"remote_loading": false,
 							"synced": false,
 							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "Application/Areas/Model/Database/SeriesModel.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 736,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								736,
-								736
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "Framework/Controller.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3527,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"sublime_auto_complete": true,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

@@ -1,6 +1,6 @@
 <?php
 
-class CustomSeriesModel {
+class CustomSeries {
     public $id;
     public $facebook;
     public $SeriesName;

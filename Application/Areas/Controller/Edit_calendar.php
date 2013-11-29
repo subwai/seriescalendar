@@ -1,9 +1,9 @@
 <?php
 require_once "./Application/Areas/ApplicationController.php";
-require_once "./Application/Areas/Model/Database/SeriesModel.php";
+require_once "./Application/Areas/Model/Database/Series.php";
 require_once "./Application/Service/SeriesUpdaterService.php";
 
-class Edit_calendarController extends ApplicationController {
+class Edit_calendar extends ApplicationController {
 
     function Index() {
         $calendar = array();
