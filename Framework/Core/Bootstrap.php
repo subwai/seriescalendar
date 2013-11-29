@@ -9,30 +9,23 @@ if (end($uri_params) == "") {
 }
 
 if (Router::CalculateMapping($uri_params)) {
-    $rootArea = "/Areas";
-    foreach ($_GET["area"] as $area) {
-        $rootArea .= "/".ucwords($area);
-    }
-    define('ROOTAREA', $rootArea);
 
-    $controllerName = ucwords($_GET["controller"]);
-    $actionName = ucwords($_GET["view"]);
-    $controllerFile = "Application".ROOTAREA."/Controller/".$controllerName.".php";
-    
-    if (file_exists($controllerFile)) {
+    $controllerFile = sprintf("Application/%s/Controller/%s.php", ROOTAREA, CONTROLLER);
+    if (is_file($controllerFile)) {
         require $controllerFile;
-        $controller = "Controller\\".$controllerName;
-        $app = new $controller();
-        $app->onActionExecuting();
-        $result = $app->$actionName();
-        $app->onActionExecuted();
-        $app->onResultExecuting();
+        $controllerClass = "Controller\\".CONTROLLER;
+        $controller = new $controllerClass();
+        $controller->onActionExecuting();
+        $action = ACTION;
+        $result = $controller->$action();
+        $controller->onActionExecuted();
+        $controller->onResultExecuting();
         if ($result instanceof Result) {
             $result->Execute();
         }
-        $app->onResultExecuted();
+        $controller->onResultExecuted();
     }  else {
-        Router::Error(404, "Controller", $controllerName);
+        Router::Error(404, "Controller", CONTROLLER);
     }
 } else {
     Router::Error(404, "Route for", $_GET["uri"]);

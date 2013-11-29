@@ -21,6 +21,14 @@ class Router {
         exit;
     }
 
+    public static function GetRootArea() {
+        $rootArea = "Areas";
+        foreach ($_GET["area"] as $area) {
+            $rootArea .= "/".ucwords($area);
+        }
+        return $rootArea;
+    }
+
     public static function CalculateMapping($request_params) {
         require "Application/routes.php";
 
@@ -32,16 +40,21 @@ class Router {
 
         if (isset($map["controller"]) && $map["controller"] == "") unset($map["controller"]);
         if (isset($map["controller"])) $map["controller"] = str_replace("-", "_", $map["controller"]);
-        if (isset($map["view"]) && $map["view"] == "") unset($map["view"]);
-        if (isset($map["view"])) $map["view"] = str_replace("-", "_", $map["view"]);
+        if (isset($map["action"]) && $map["action"] == "") unset($map["action"]);
+        if (isset($map["action"])) $map["action"] = str_replace("-", "_", $map["action"]);
         
         $defaultMap = array(
             "area" => array(),
             "controller" => "home",
-            "view" => "index"
+            "action" => "index"
         );
 
         $_GET = array_merge($_GET, $map + $defaultMap);
+
+        define('ROOTAREA', self::GetRootArea());
+        define("CONTROLLER", ucwords($_GET["controller"]));
+        define("ACTION", ucwords($_GET["action"]));
+        
         return true;
     }
 
