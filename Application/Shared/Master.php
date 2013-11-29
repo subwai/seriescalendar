@@ -34,7 +34,16 @@
       <?= $this->View->HeaderContent(); ?>
     </section>
     <section class="page-body">
+    <?php if (FacebookManager::FacebookUser()): ?>
       <?= $this->View->CenterColumn(); ?>
+    <?php else: ?>
+      <div class="jumbotron">
+        <h1>Welcome, friend!</h1>
+        <h5>This website is designed with the sole purpose of giving you easy access to knowledge of when your favourite shows airs.</h5>
+        <p>Please log in with facebook in order to continue</p>
+        <p><fb:login-button size="xlarge"></fb:login-button></p>
+      </div>
+    <?php endif ?>
     </section>
   </div>
 

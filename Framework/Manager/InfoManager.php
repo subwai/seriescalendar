@@ -1,7 +1,6 @@
 <?php
 
-class InfoManager
-{
+abstract class InfoManager {
     protected $InfoList;
     protected $Info;
     protected $InfoID;
@@ -15,6 +14,11 @@ class InfoManager
                 $this->Info = new InfoModel("Undefined info: ".$id, 3, false);
             }
         }
+    }
+
+    public function SetCustomInfo($info, $infoLevel = 2, $autoClose = true) {
+        $this->Info = new ErrorModel($info, $infoLevel, $autoClose);
+        $this->InfoID = 0;
     }
 
     public function GetInfo() {

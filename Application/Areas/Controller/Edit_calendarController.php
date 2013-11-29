@@ -31,16 +31,6 @@ class Edit_calendarController extends ApplicationController {
         $added = array_diff($_POST["selected_series"], $subscriptions);
         $removed = array_diff($subscriptions, $_POST["selected_series"]);
 
-        $stmt = $this->DatabaseMgr->Prepare("DELETE FROM subscriptions WHERE series = :series AND facebook = :facebook", MAIN);
-        foreach ($removed as $id) {
-            $stmt->execute(array("series" => $id, "facebook" => FacebookManager::FacebookUser()));
-        }
-        
-        $stmt = $this->DatabaseMgr->Prepare("INSERT INTO subscriptions VALUES (:facebook, :series)", MAIN);
-        foreach ($added as $id) {
-            $stmt->execute(array("series" => $id, "facebook" => FacebookManager::FacebookUser() ));
-        }
-
         if (!empty($added)) {
             $addedStr = implode(array_keys(array_fill(0,count($added),0)), ",:");
             $stmt = $this->DatabaseMgr->Prepare("SELECT id FROM series WHERE id IN (:$addedStr)", MAIN);
@@ -51,6 +41,16 @@ class Edit_calendarController extends ApplicationController {
 
             $updateSeries = new SeriesUpdaterService($this->DatabaseMgr);
             $updateSeries->UpdateList($new);
+        }
+
+        $stmt = $this->DatabaseMgr->Prepare("DELETE FROM subscriptions WHERE series = :series AND facebook = :facebook", MAIN);
+        foreach ($removed as $id) {
+            $stmt->execute(array("series" => $id, "facebook" => FacebookManager::FacebookUser()));
+        }
+        
+        $stmt = $this->DatabaseMgr->Prepare("INSERT INTO subscriptions VALUES (:facebook, :series)", MAIN);
+        foreach ($added as $id) {
+            $stmt->execute(array("series" => $id, "facebook" => FacebookManager::FacebookUser() ));
         }
 
         return $this->Json();

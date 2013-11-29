@@ -9,7 +9,6 @@ require_once "./Application/Extra/facebook-php-sdk/facebook.php";
 
 class ApplicationController extends Controller
 {
-    public $Config;
     public $DatabaseMgr;
     public $ErrorMgr;
     public $InfoMgr;
@@ -19,7 +18,8 @@ class ApplicationController extends Controller
     public function __construct() {
         $this->StartTime = microtime(true);
         $ini = parse_ini_file("../seriescalendar.ini", true);
-        $this->Config = $ini["application"];
+        parent::__construct($ini["application"]);
+
         $this->ErrorMgr = new AppErrorManager($this->Config);
         $this->InfoMgr = new AppInfoManager($this->Config);
         $this->DatabaseMgr = new DatabaseManager($ini, $this->ErrorMgr);

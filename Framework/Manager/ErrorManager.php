@@ -1,7 +1,6 @@
 <?php
 
-abstract class ErrorManager
-{
+abstract class ErrorManager {
     protected $ErrorList;
     protected $Error;
     protected $ErrorID;
@@ -26,8 +25,12 @@ abstract class ErrorManager
         return $this->Error;
     }
 
+    public function GetErrorID() {
+        return $this->ErrorID;
+    }
+
     public function HasError() {
-        if (isset($this->Error) && $this->Config->ErrorLevel >= $this->Error->ErrorLevel) {
+        if (isset($this->Error)) {
             return true;
         } else {
             return false;

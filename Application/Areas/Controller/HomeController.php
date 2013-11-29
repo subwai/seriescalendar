@@ -38,7 +38,7 @@ class HomeController extends ApplicationController {
             while($res = $stmt->fetch()) {
                 $series[] = $res;
             }
-
+            
             foreach ($series as $entry) {
                 $model->Calendar[$entry->Airs_DayOfWeek]->addSerie($entry);
 
@@ -58,7 +58,7 @@ class HomeController extends ApplicationController {
                 }
             }
 
-            
+            $model->Count = count($series);
             $model->Calendar[$now->format("w")]->active = "active";
             $model->Calendar[$now->format("w")]->class = "today";
             $model->Calendar[$tomorrow->format("w")]->class = "tomorrow";

@@ -45,7 +45,12 @@ class Index extends MainView {
 
     function CenterColumn()
     { /*******************************************************/ ?>
-
+  
+    <?php if (!$this->Model->Count): ?>
+    <div class="alert alert-info">
+      <p>You are currently not following any series, <a href="/edit-calendar/" class="alert-link">click here</a> in order to add a few!</p>
+    </div>
+    <?php endif ?>
     <div class="panel panel-calendar">
       <div class="panel-heading">
         <ul class="nav nav-tabs">
@@ -114,8 +119,8 @@ class Index extends MainView {
           </table>
           <?php endif ?>
         </div>
-    </div>
-    
+      </div>
+    </div>  
 
     <?php /*******************************************************/ }
 

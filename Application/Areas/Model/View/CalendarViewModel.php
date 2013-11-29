@@ -5,6 +5,7 @@ class CalendarViewModel {
     public $Calendar;
     public $Upcoming;
     public $Released;
+    public $Count;
 }
 
 ?>

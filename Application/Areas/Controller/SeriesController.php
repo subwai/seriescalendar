@@ -26,12 +26,6 @@ class SeriesController extends ApplicationController {
         return $this->View($model);
     }
 
-    function Subscribe() {
-        $stmt = $this->DatabaseMgr->Prepare("INSERT INTO subscriptions (series, facebook) VALUES (:series, :facebook)", MAIN);
-        $stmt->execute(array("series" => $_POST["id"], "facebook" => FacebookManager::FacebookUser()));
-        return $this->Json();
-    }
-
     function Create() {
         $model = new SeriesViewModel();
         $model->Series = new CustomSeriesModel();
@@ -109,6 +103,12 @@ class SeriesController extends ApplicationController {
         } catch (Exception $e) {
             return $this->Json($e->getMessage(), false);
         } 
+    }
+
+    function Subscribe() {
+        $stmt = $this->DatabaseMgr->Prepare("INSERT INTO subscriptions (series, facebook) VALUES (:series, :facebook)", MAIN);
+        $stmt->execute(array("series" => $_POST["id"], "facebook" => FacebookManager::FacebookUser()));
+        return $this->Json();
     }
 }
 
