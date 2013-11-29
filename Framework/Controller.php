@@ -33,7 +33,7 @@ class Controller
         /** Dynamic HTML minification
          *  decreases performance by 1-3ms, and probably isn't giving it back in load time anyways...
          *  But it looks pretty! **/
-        if (!$this->Config["compressed"]) {
+        if (!$this->Config["application"]["compressed"]) {
             ob_start(function($buffer) {
                 // 1 - after tags, 2 - before tags, 3 - multiple whitespace, 4 - after <script> tags, 5 - before </script> tags
                 $search = array('/\>[^\S\r\n]{2,}/s','/[^\S\r\n]{2,}\</s','/(\s)+/s','/\<script\>[^\S]+/s','/[^\S]+\<\/script\>/s');
