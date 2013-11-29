@@ -1,7 +1,6 @@
 <?php
-namespace Application\Interfaces;
 
-abstract class MainView extends \Framework\Interfaces\ViewInterface {
+abstract class MainView extends ViewInterface {
     public $MasterView = "Master";
 
     public abstract function HeadContent();

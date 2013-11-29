@@ -1,5 +1,4 @@
 <?php
-namespace Framework\Result;
 
 class JsonResult implements Result {
 

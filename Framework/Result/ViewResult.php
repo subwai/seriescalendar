@@ -1,5 +1,4 @@
 <?php
-namespace Framework\Result;
 
 class ViewResult implements Result {
 

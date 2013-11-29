@@ -1,2 +1,8 @@
 <?php
-/** Empty
+namespace Model;
+
+class Index {
+
+}
+
+?>

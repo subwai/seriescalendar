@@ -1,46 +1,41 @@
 <?php
-namespace Framework\Core {
-    chdir('../../');
+chdir('../../');
 
-    $uri_params = explode("/", $_GET["uri"]);
-    if (end($uri_params) == "") {
-        array_pop($uri_params);
-    }
-    new Router();
+require_once "Framework/Core/Router.php";
 
-    if (Router::CalculateMapping($uri_params)) {
-        $rootArea = "\\Areas";
-        foreach ($_GET["area"] as $area) {
-            $rootArea .= "\\".ucwords($area);
-        }
-        define('ROOTAREA', $rootArea);
-
-        $controllerName = ucwords($_GET["controller"]);
-        $actionName = ucwords($_GET["view"]);
-        $controller = "Application".ROOTAREA."\\Controller\\".$controllerName;
-        
-        if (class_exists($controller)) {
-            $app = new $controller();
-            $app->onActionExecuting();
-            $result = $app->$actionName();
-            $app->onActionExecuted();
-            $app->onResultExecuting();
-            if ($result instanceof \Framework\Result\Result) {
-                $result->Execute();
-            }
-            $app->onResultExecuted();
-        }  else {
-            Router::Error(404, "Controller", $controllerName);
-        }
-    } else {
-        Router::Error(404, "Route for", $_GET["uri"]);
-    }
+$uri_params = explode("/", $_GET["uri"]);
+if (end($uri_params) == "") {
+    array_pop($uri_params);
 }
 
-namespace {
-    function __autoload($class) {
-       require_once $class . '.php';
+if (Router::CalculateMapping($uri_params)) {
+    $rootArea = "/Areas";
+    foreach ($_GET["area"] as $area) {
+        $rootArea .= "/".ucwords($area);
     }
+    define('ROOTAREA', $rootArea);
+
+    $controllerName = ucwords($_GET["controller"]);
+    $actionName = ucwords($_GET["view"]);
+    $controllerFile = "./Application".ROOTAREA."/Controller/".$controllerName.".php";
+    
+    if (file_exists($controllerFile)) {
+        require $controllerFile;
+        $controller = "Controller\\".$controllerName;
+        $app = new $controller();
+        $app->onActionExecuting();
+        $result = $app->$actionName();
+        $app->onActionExecuted();
+        $app->onResultExecuting();
+        if ($result instanceof Result) {
+            $result->Execute();
+        }
+        $app->onResultExecuted();
+    }  else {
+        Router::Error(404, "Controller", $controllerName);
+    }
+} else {
+    Router::Error(404, "Route for", $_GET["uri"]);
 }
 
 ?>
