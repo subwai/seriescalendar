@@ -15,7 +15,7 @@ class Controller
     public function __construct() {
         $this->Config = parse_ini_file("quartz.ini", true);
 
-        switch ($this->Config["environment"])
+        switch ($this->Config["application"]["environment"])
         {
             case 'development':
                 error_reporting(E_ALL);
