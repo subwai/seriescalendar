@@ -1,7 +1,4 @@
 <?php
-require_once "Framework/Manager/Database/Connection.php";
-require_once "Framework/Manager/Database/MysqlDatabase.php";
-require_once "Framework/Manager/Database/PDOStatementWrapper.php";
 
 class DatabaseManager {
 

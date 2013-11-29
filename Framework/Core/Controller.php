@@ -1,8 +1,7 @@
 <?php
-require_once "Framework/Interface/ViewInterface.php";
-require_once "Framework/Result/Result.php";
-require_once "Framework/Result/ViewResult.php";
-require_once "Framework/Result/JsonResult.php";
+namespace Framework\Core;
+
+use Framework\Result;
 
 class Controller
 {
@@ -61,21 +60,14 @@ class Controller
     }
 
     public function View($model = array(), $viewName = null, $masterView = null) {
-        $viewName = is_null($viewName) ? ucfirst($_GET["view"]) : $viewName;
-        $controllerName = ucfirst($_GET["controller"]);
+        $controllerName = ucwords($_GET["controller"]);
+        $viewName = is_null($viewName) ? ucwords($_GET["view"]) : $viewName;
+        $viewName = "Application".ROOTAREA."\\View\\".$controllerName."\\".$viewName;
 
-        $viewFile = "./Application";
-        $viewFile .= ROOTAREA;
-        $viewFile .= "/View";
-        $viewFile .= "/".$controllerName;
-        $viewFile .= "/".$viewName;
-        $viewFile .= ".php";
-
-        if (file_exists($viewFile)) {
-            require $viewFile;
+        if (class_exists($viewName)) {
             $view = new $viewName($model);
             $masterView = is_null($masterView) ? $view->MasterView : $masterView;
-            return new ViewResult($view, $viewName, $controllerName, $masterView, $this->MasterModel);
+            return new Result\ViewResult($view, $viewName, $controllerName, $masterView, $this->MasterModel);
         } else {
             Router::Error(404, "View", $viewName);
         }        
@@ -94,7 +86,7 @@ class Controller
         if (!$success) {
             header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
         }
-        return new JsonResult($model);
+        return new Result\JsonResult($model);
     }
 
     public function FullView($model = array(), $viewName = null) {

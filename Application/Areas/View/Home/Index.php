@@ -1,5 +1,7 @@
 <?php
-class Index extends MainView {
+namespace Application\Areas\View\Home;
+
+class Index extends \Application\Interfaces\MainView {
 
     function HeadContent()
     { /*******************************************************/ ?>

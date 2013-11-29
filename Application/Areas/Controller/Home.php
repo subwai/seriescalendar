@@ -1,7 +1,7 @@
 <?php
-require_once "Application/Areas/ApplicationController.php";
+namespace Application\Areas\Controller;
 
-class Home extends ApplicationController {
+class Home extends \Application\Areas\ApplicationController {
 
     function Index() {
         

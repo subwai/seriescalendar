@@ -1,6 +1,5 @@
 <?php
-require_once "Framework/Helper/FrameworkHelper.php";
-require_once "Framework/Route.php";
+namespace Framework\Core;
 
 class Router {
     private static $routes;

@@ -1,9 +1,7 @@
 <?php
-require_once "Framework/Controller.php";
-require_once "Framework/Manager/DatabaseManager.php";
-require_once "Application/Shared/Interface/MainView.php";
+namespace Application\Areas;
 
-class ApplicationController extends Controller {
+class ApplicationController extends \Framework\Core\Controller {
     
     protected $StartTime;
 
