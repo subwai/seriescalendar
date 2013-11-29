@@ -120,7 +120,7 @@ class Index extends MainView {
           <?php endif ?>
         </div>
       </div>
-    </div>  
+    </div>
 
     <?php /*******************************************************/ }
 

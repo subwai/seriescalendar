@@ -1,0 +1,10 @@
+[application]
+debug = On
+compressed = On
+environment = development
+
+[db_local]
+hostname = "127.0.0.1"
+username = "root"
+password = "password"
+database["MAIN"] = "quartz"

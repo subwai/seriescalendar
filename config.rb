@@ -1,11 +1,11 @@
 # Require any additional compass plugins here.
 
 # Set this to the root of your project when deployed:
-http_path = "seriescalendar.no-ip.org"
-css_dir = "/Application/Assets/Css"
-sass_dir = "/Application/Assets/Sass"
-images_dir = "/Application/Assets/Images"
-javascripts_dir = "/Application/Assets/Javascript"
+# http_path = "/"
+css_dir = "/application/Assets/Css"
+sass_dir = "/application/Assets/Sass"
+# images_dir = "/application/Assets/Images"
+# javascripts_dir = "/application/Assets/Javascript"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

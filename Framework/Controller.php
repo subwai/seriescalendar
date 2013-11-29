@@ -1,20 +1,39 @@
 <?php
-require_once "./Framework/Interface/ViewInterface.php";
-require_once "./Framework/Result/Result.php";
-require_once "./Framework/Result/ViewResult.php";
-require_once "./Framework/Result/JsonResult.php";
+require_once "Framework/Interface/ViewInterface.php";
+require_once "Framework/Result/Result.php";
+require_once "Framework/Result/ViewResult.php";
+require_once "Framework/Result/JsonResult.php";
 
 class Controller
 {
-    public $Config;
-    public $MasterModel;
+    protected $Config;
+    protected $DatabaseMgr;
+    protected $ErrorMgr;
+    protected $InfoMgr;
+    protected $MasterModel;
 
-    public function __construct($config) {
-        $this->Config = $config;
+    public function __construct() {
+        $this->Config = parse_ini_file("quartz.ini", true);
+
+        switch ($this->Config["environment"])
+        {
+            case 'development':
+                error_reporting(E_ALL);
+            break;
+        
+            case 'testing':
+            case 'production':
+                error_reporting(0);
+            break;
+
+            default:
+                exit('The application environment is not set correctly.');
+        }
+
         /** Dynamic HTML minification
          *  decreases performance by 1-3ms, and probably isn't giving it back in load time anyways...
          *  But it looks pretty! **/
-        if (!$this->Config["debug"]) {
+        if (!$this->Config["compressed"]) {
             ob_start(function($buffer) {
                 // 1 - after tags, 2 - before tags, 3 - multiple whitespace, 4 - after <script> tags, 5 - before </script> tags
                 $search = array('/\>[^\S\r\n]{2,}/s','/[^\S\r\n]{2,}\</s','/(\s)+/s','/\<script\>[^\S]+/s','/[^\S]+\<\/script\>/s');
@@ -25,7 +44,7 @@ class Controller
         }
     }
 
-    function __call($method, $parameters) {
+    public function __call($method, $parameters) {
         Router::Error(404, "Action", $method);
     }
 
