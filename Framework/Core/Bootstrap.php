@@ -3,8 +3,6 @@ chdir('../../');
 
 require_once "Framework/Router.php";
 
-header('Content-type: text/html; charset=utf-8');
-
 $uri_params = explode("/", $_GET["uri"]);
 if (end($uri_params) == "") {
     array_pop($uri_params);

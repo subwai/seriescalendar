@@ -5,12 +5,7 @@ RewriteEngine On
 #Rewrites everything that doesn't have an extension
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !\.[^/]+$
-RewriteRule ^Application/(.*)$ framework/Core/Php.php?uri=$1 [QSA,L]
-
-#Rewrites everything that ends with .css
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} \.css$
-RewriteRule ^Application/(.*)$ framework/Core/Css.php?uri=$1 [QSA,L]
+RewriteRule ^Application/(.*)$ framework/Core/Bootstrap.php?uri=$1 [QSA,L]
 
 #Rewrites everything that doesn't have a file at the requested path
 #Throw a 404 rather than a blank page for config in order to confuse malicious users
