@@ -21,12 +21,12 @@ class Router {
         exit;
     }
 
-    public static function DefineArea() {
+    public static function GetRootArea() {
         $rootArea = "Areas";
         foreach ($_GET["area"] as $area) {
             $rootArea .= "/".ucwords($area);
         }
-        define('ROOTAREA', $rootArea);
+        return $rootArea;
     }
 
     public static function CalculateMapping($request_params) {
@@ -50,6 +50,11 @@ class Router {
         );
 
         $_GET = array_merge($_GET, $map + $defaultMap);
+
+        define('ROOTAREA', self::GetRootArea());
+        define("CONTROLLER", ucwords($_GET["controller"]));
+        define("ACTION", ucwords($_GET["action"]));
+        
         return true;
     }
 
