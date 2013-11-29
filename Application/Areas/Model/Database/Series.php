@@ -1,4 +1,5 @@
 <?php
+namespace Model;
 
 class Series {
     public $id;
@@ -17,10 +18,10 @@ class Series {
     public $poster;
 
     function __construct() {
-        $now = new DateTime();
-        $airs = new DateTime($this->Airs_Time, new DateTimeZone("America/Chicago"));
+        $now = new \DateTime();
+        $airs = new \DateTime($this->Airs_Time, new \DateTimeZone("America/Chicago"));
         $airs->setISODate($now->format("Y"), $now->format("W"), $this->Airs_DayOfWeek);
-        $airs->setTimezone(new DateTimeZone("Europe/Stockholm"));
+        $airs->setTimezone(new \DateTimeZone("Europe/Stockholm"));
         $this->Airs_Time = $airs->format("H:i");
         $this->Airs_DayOfWeek = $airs->format("w");
     }

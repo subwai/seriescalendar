@@ -1,5 +1,5 @@
 <?php
-require_once "./Framework/Manager/ErrorManager.php";
+require_once "Framework/Manager/ErrorManager.php";
 
 class AppErrorManager extends ErrorManager
 {

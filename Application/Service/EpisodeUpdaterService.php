@@ -1,5 +1,5 @@
 <?php
-require_once "./Application/Extra/MultiRequest/Handler.php";
+require_once "Application/Extra/MultiRequest/Handler.php";
 
 class EpisodeUpdaterService {
 

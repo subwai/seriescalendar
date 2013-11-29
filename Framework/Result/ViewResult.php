@@ -17,7 +17,7 @@ class ViewResult implements Result {
     }
 
     public function Execute() {
-        include "./Application/Shared/".$this->MasterView.".php";
+        include "Application/Shared/".$this->MasterView.".php";
     }
 }
 

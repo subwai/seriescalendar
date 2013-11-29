@@ -1,6 +1,6 @@
 <?php
 require_once "Framework/Helper/FrameworkHelper.php";
-require_once "Framework/Route.php";
+require_once "Framework/Core/Route.php";
 
 class Router {
     private static $routes;
@@ -14,7 +14,7 @@ class Router {
         try {
             $_GET["HttpErrorType"] = $type;
             $_GET["HttpErrorName"] = $name;
-            include "./Application/HttpError/".$code.".php";
+            include "Application/HttpError/".$code.".php";
         } catch (Exception $e) {
             printf("%s - %s: %s, does not exist!", $code, $type, $name);
         }

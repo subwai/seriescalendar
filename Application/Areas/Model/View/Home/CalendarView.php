@@ -1,5 +1,7 @@
 <?php
-require_once "./Application/Areas/Model/CalendarDay.php";
+namespace Model;
+
+require_once "Application/Areas/Model/View/Home/CalendarDay.php";
 
 class CalendarView {
     public $Calendar;

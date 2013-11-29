@@ -1,5 +1,7 @@
 <?php
-class Edit extends MainView {
+namespace View;
+
+class Edit extends \MainView {
 
     function HeadContent()
     { /*******************************************************/ ?>
@@ -67,11 +69,11 @@ class Edit extends MainView {
 
     <h1 class="pull-left">Edit series</h1>
     <div class="facebook-profile pull-right">
-      <?php if (FacebookManager::FacebookUser()): ?>
+      <?php if (\FacebookManager::FacebookUser()): ?>
         <div class="thumbnail">
-          <fb:profile-pic uid="<?= FacebookManager::FacebookUser() ?>" width="40" height="40" class="profile-pic pull-left"></fb:profile-pic>
+          <fb:profile-pic uid="<?= \FacebookManager::FacebookUser() ?>" width="40" height="40" class="profile-pic pull-left"></fb:profile-pic>
           <div class="profile-details pull-left">
-            <p class="fb-name"><fb:name uid="<?= FacebookManager::FacebookUser() ?>" useyou="false" linked="false"></fb:name></p>
+            <p class="fb-name"><fb:name uid="<?= \FacebookManager::FacebookUser() ?>" useyou="false" linked="false"></fb:name></p>
             <p>Welcome back!</p>
           </div>
         </div>

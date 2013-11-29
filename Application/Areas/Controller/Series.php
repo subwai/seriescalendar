@@ -1,8 +1,10 @@
 <?php
-require_once "./Application/Areas/ApplicationController.php";
-require_once "./Application/Areas/Model/View/SeriesView.php";
+namespace Controller;
 
-class Series extends ApplicationController {
+require_once "Application/Areas/ApplicationController.php";
+require_once "Application/Areas/Model/View/Series/SeriesView.php";
+
+class Series extends \ApplicationController {
 
     function Index() {
 
@@ -19,16 +21,16 @@ class Series extends ApplicationController {
             "series" => array(),
         );
 
-        $stmt = $this->DatabaseMgr->Execute("SELECT *, date_format(Airs_Time, '%H:%i') as Airs_Time FROM custom_series WHERE facebook = ".FacebookManager::FacebookUser(), MAIN);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "CustomSeries");
+        $stmt = $this->DatabaseMgr->Execute("SELECT *, date_format(Airs_Time, '%H:%i') as Airs_Time FROM custom_series WHERE facebook = ".\FacebookManager::FacebookUser(), MAIN);
+        $stmt->setFetchMode(\PDO::FETCH_CLASS, "\Model\CustomSeries");
         $model->series = $stmt->fetchAll();
 
         return $this->View($model);
     }
 
     function Create() {
-        $model = new SeriesView();
-        $model->Series = new CustomSeries();
+        $model = new \Model\SeriesView();
+        $model->Series = new \Model\CustomSeries();
         $model->Series->Airs_DayOfWeek = 1;
 
         if (isset($_POST["submit"])) {
@@ -38,21 +40,21 @@ class Series extends ApplicationController {
                 if (isset($_POST["Airs_Time"])) { $model->Series->Airs_Time = $_POST["Airs_Time"]; }
                 if (isset($_POST["Airs_DayOfWeek"])) { $model->Series->Airs_DayOfWeek = $_POST["Airs_DayOfWeek"]; }
 
-                if (!$model->Series->SeriesName) { throw new Exception("Title can not be empty."); }
-                if (!$model->Series->Overview) { throw new Exception("Description can not be empty."); }
-                if (!$model->Series->Airs_Time) { throw new Exception("Release time can not be empty."); }
-                if (!$model->Series->Airs_DayOfWeek) { throw new Exception("Release day can not be empty."); }
+                if (!$model->Series->SeriesName) { throw new \Exception("Title can not be empty."); }
+                if (!$model->Series->Overview) { throw new \Exception("Description can not be empty."); }
+                if (!$model->Series->Airs_Time) { throw new \Exception("Release time can not be empty."); }
+                if (!$model->Series->Airs_DayOfWeek) { throw new \Exception("Release day can not be empty."); }
 
-                if (!preg_match("/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/", $model->Series->Airs_Time)) { throw new Exception("Wrong format for release time, correct format is HH:mm"); }
+                if (!preg_match("/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/", $model->Series->Airs_Time)) { throw new \Exception("Wrong format for release time, correct format is HH:mm"); }
 
-                $model->Series->facebook = FacebookManager::FacebookUser();
+                $model->Series->facebook = \FacebookManager::FacebookUser();
 
                 $stmt = $this->DatabaseMgr->Prepare(@"INSERT INTO custom_series (id, facebook, SeriesName, Airs_Time, Airs_DayOfWeek, Overview)
                                                     VALUES (:id, :facebook, :SeriesName, :Airs_Time, :Airs_DayOfWeek, :Overview)", MAIN);
                 $stmt->execute((array) $model->Series);
                 return $this->Redirect("Index");
 
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $model->Error = $e->getMessage();
                 return $this->View($model);
             }
@@ -64,12 +66,12 @@ class Series extends ApplicationController {
     function Edit() {
 
         $stmt = $this->DatabaseMgr->Prepare("SELECT *, date_format(Airs_Time, '%H:%i') as Airs_Time FROM custom_series WHERE id = :id", MAIN);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, "CustomSeries");
+        $stmt->setFetchMode(\PDO::FETCH_CLASS, "\Model\CustomSeries");
         $stmt->execute(array("id" => $_GET["id"]));
         $series = $stmt->fetch();
 
-        if ($series->facebook != FacebookManager::FacebookUser()) {
-            throw new Exception("You do not have the authority to view this entry.");
+        if ($series->facebook != \FacebookManager::FacebookUser()) {
+            throw new \Exception("You do not have the authority to view this entry.");
             return $this->Redirect("Index");
         }
 
@@ -77,7 +79,7 @@ class Series extends ApplicationController {
     }
 
     function Save() {
-        $series = new CustomSeries();
+        $series = new \Model\CustomSeries();
 
         try {
             if (isset($_POST["SeriesName"])) { $series->SeriesName = $_POST["SeriesName"]; }
@@ -85,29 +87,29 @@ class Series extends ApplicationController {
             if (isset($_POST["Airs_Time"])) { $series->Airs_Time = $_POST["Airs_Time"]; }
             if (isset($_POST["Airs_DayOfWeek"])) { $series->Airs_DayOfWeek = $_POST["Airs_DayOfWeek"]; }
 
-            if (!$series->SeriesName) { throw new Exception("Title can not be empty."); }
-            if (!$series->Overview) { throw new Exception("Description can not be empty."); }
-            if (!$series->Airs_Time) { throw new Exception("Release time can not be empty."); }
-            if (!$series->Airs_DayOfWeek) { throw new Exception("Release day can not be empty."); }
+            if (!$series->SeriesName) { throw new \Exception("Title can not be empty."); }
+            if (!$series->Overview) { throw new \Exception("Description can not be empty."); }
+            if (!$series->Airs_Time) { throw new \Exception("Release time can not be empty."); }
+            if (!$series->Airs_DayOfWeek) { throw new \Exception("Release day can not be empty."); }
 
-            if (!preg_match("/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/", $series->Airs_Time)) { throw new Exception("Wrong format for release time, correct format is HH:mm"); }
+            if (!preg_match("/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/", $series->Airs_Time)) { throw new \Exception("Wrong format for release time, correct format is HH:mm"); }
 
             $series->id = $_GET["id"];
-            $series->facebook = FacebookManager::FacebookUser();
+            $series->facebook = \FacebookManager::FacebookUser();
 
             $stmt = $this->DatabaseMgr->Prepare(@"UPDATE custom_series SET SeriesName = :SeriesName, Airs_Time = :Airs_Time,
                                                 Airs_DayOfWeek = :Airs_DayOfWeek, Overview = :Overview WHERE id = :id AND facebook = :facebook", MAIN);
             $stmt->execute((array) $series);
             return $this->Json((array) $series);
 
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return $this->Json($e->getMessage(), false);
         } 
     }
 
     function Subscribe() {
         $stmt = $this->DatabaseMgr->Prepare("INSERT INTO subscriptions (series, facebook) VALUES (:series, :facebook)", MAIN);
-        $stmt->execute(array("series" => $_POST["id"], "facebook" => FacebookManager::FacebookUser()));
+        $stmt->execute(array("series" => $_POST["id"], "facebook" => \FacebookManager::FacebookUser()));
         return $this->Json();
     }
 }

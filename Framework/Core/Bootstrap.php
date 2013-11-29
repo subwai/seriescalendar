@@ -1,7 +1,7 @@
 <?php
 chdir('../../');
 
-require_once "Framework/Router.php";
+require_once "Framework/Core/Router.php";
 
 $uri_params = explode("/", $_GET["uri"]);
 if (end($uri_params) == "") {
@@ -17,11 +17,11 @@ if (Router::CalculateMapping($uri_params)) {
 
     $controllerName = ucwords($_GET["controller"]);
     $actionName = ucwords($_GET["view"]);
-    $controllerFile = "./Application".ROOTAREA."/Controller/".$controllerName.".php";
+    $controllerFile = "Application".ROOTAREA."/Controller/".$controllerName.".php";
     
     if (file_exists($controllerFile)) {
         require $controllerFile;
-        $controller = $controllerName;
+        $controller = "Controller\\".$controllerName;
         $app = new $controller();
         $app->onActionExecuting();
         $result = $app->$actionName();

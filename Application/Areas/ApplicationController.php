@@ -1,5 +1,5 @@
 <?php
-require_once "Framework/Controller.php";
+require_once "Framework/Core/Controller.php";
 require_once "Framework/Manager/DatabaseManager.php";
 require_once "Application/Shared/Interface/MainView.php";
 require_once "Application/Manager/AppErrorManager.php";
@@ -12,8 +12,7 @@ class ApplicationController extends Controller
     public $DatabaseMgr;
     public $ErrorMgr;
     public $InfoMgr;
-
-
+    
     protected $StartTime;
 
     public function __construct() {

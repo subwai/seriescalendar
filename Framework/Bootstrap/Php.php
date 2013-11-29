@@ -1,7 +1,7 @@
 <?php
 chdir('../../');
 
-require_once "./Framework/Router.php";
+require_once "Framework/Router.php";
 
 header('Content-type: text/html; charset=utf-8');
 
@@ -19,7 +19,7 @@ if (Router::CalculateMapping($uri_params)) {
 
     $controllerName = ucwords($_GET["controller"]);
     $actionName = ucwords($_GET["view"]);
-    $controllerFile = "./Application".ROOTAREA."/Controller/".$controllerName."Controller.php";
+    $controllerFile = "Application".ROOTAREA."/Controller/".$controllerName."Controller.php";
     
     if (file_exists($controllerFile)) {
         require $controllerFile;

@@ -64,7 +64,7 @@ class Controller
         $viewName = is_null($viewName) ? ucfirst($_GET["view"]) : $viewName;
         $controllerName = ucfirst($_GET["controller"]);
 
-        $viewFile = "./Application";
+        $viewFile = "Application";
         $viewFile .= ROOTAREA;
         $viewFile .= "/View";
         $viewFile .= "/".$controllerName;
@@ -73,7 +73,8 @@ class Controller
 
         if (file_exists($viewFile)) {
             require $viewFile;
-            $view = new $viewName($model);
+            $viewClass = "View\\".$viewName;
+            $view = new $viewClass($model);
             $masterView = is_null($masterView) ? $view->MasterView : $masterView;
             return new ViewResult($view, $viewName, $controllerName, $masterView, $this->MasterModel);
         } else {
@@ -101,7 +102,7 @@ class Controller
         $viewName = is_null($viewName) ? ucfirst($_GET["view"]) : $viewName;
         $controllerName = ucfirst($_GET["controller"]);
         
-        $viewFile = "./Application";
+        $viewFile = "Application";
         $viewFile .= ROOTAREA;
         $viewFile .= "/View";
         $viewFile .= "/".$controllerName;

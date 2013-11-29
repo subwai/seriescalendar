@@ -1,5 +1,5 @@
 <?php
-require_once "./Framework/Manager/InfoManager.php";
+require_once "Framework/Manager/InfoManager.php";
 
 class AppInfoManager extends InfoManager
 {

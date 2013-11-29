@@ -1,5 +1,5 @@
 <?php
-require_once "Framework/Parameter.php";
+require_once "Framework/Core/Parameter.php";
 
 class Route {
 

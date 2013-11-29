@@ -1,6 +1,8 @@
 <?php
-require_once "./Application/Areas/ApplicationController.php";
-require_once "./Application/Service/SeriesUpdaterService.php";
+namespace Controller;
+
+require_once "Application/Areas/ApplicationController.php";
+require_once "Application/Service/SeriesUpdaterService.php";
 
 class SeriesController extends ApplicationController {
 
