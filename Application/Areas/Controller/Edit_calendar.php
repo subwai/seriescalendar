@@ -41,7 +41,7 @@ class Edit_calendar extends \ApplicationController {
 
             $new = array_diff($added, $old);
 
-            $updateSeries = new SeriesUpdaterService($this->DatabaseMgr);
+            $updateSeries = new \SeriesUpdaterService($this->DatabaseMgr);
             $updateSeries->UpdateList($new);
         }
 

@@ -20,6 +20,9 @@ class Index extends \MainView {
     $seltable = $("#selected-series-table");
     $restable = $("#search-results-table");
 
+    $mCSB_container = $(".mCSB_container");
+    $content = $mCSB_container.first();
+
     window.searchResults = [];
     window.selectedList = [];
     <?php foreach ($this->Model as $serie): ?>
@@ -37,6 +40,7 @@ class Index extends \MainView {
       window.selectedList = _.values(window.selectedList);
       $seltable.find("tr[value='"+id+"']").remove();
       $selected.find("option[value='"+id+"']").remove();
+      window.UpdateContainerHeight();
     };
 
     var addItem = function() {
@@ -47,16 +51,20 @@ class Index extends \MainView {
       $seltable.html(_.template($("#select-table-template").html(), {items:window.selectedList}));
       $seltable.find("button").click(deleteSerie);
       $(this).attr("disabled","disabled");
+      window.UpdateContainerHeight();
     };
 
     $seltable.find("button").click(deleteSerie);
 
     $("#search-form").submit(function(e) {
       e.preventDefault();
-      $.post("/edit-calendar/search/", $(this).serialize(), function(data) {
+      $.post("/edit-calendar/search/", $(this).serialize())
+      .done(function(data) {
         window.searchResults = data;
         $restable.html(_.template($("#search-table-template").html(), {items:window.searchResults}));
         $restable.find("button").click(addItem);
+      }).always(function() {
+        window.UpdateContainerHeight();
       });
     });
 

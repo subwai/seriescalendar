@@ -1,18 +1,78 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
+
+$footer_height: 150px;
+
+html, body { height: 100%; max-height: 100%; }
 body {
   background-color: #333;
-  background: url("/Assets/Background/seamless_pattern.jpg") repeat;
+  background: url(/Assets/Background/zwartevilt.png);
 }
 
-nav {
-  margin-bottom: 19px;
-}
+.site-wrapper {
+  height: 100%;
+  margin: 0 auto (-1 * ($footer_height + 20px));
+  padding: 0 0 170px;
+  .page-wrapper {
+    height: 100%;
+    margin: -71px auto ($footer_height + 20px);
+    padding-top: 71px;
+    .page {
+      height: 100%;
+      margin: 0 auto -15px;
+      padding-bottom: 15px;
+      border-radius: 2px;
+      background: url(/Assets/Background/broken_noise.png);
+      box-shadow: 0 10px 35px 5px rgba(0,0,0,.5);
+      .body-wrapper {
+        height: 100%;
+        margin: -141px auto 0;
+        padding-top: 141px;
+        .page-body {
+          overflow: hidden;
+          max-height: 100%;
+          min-height: 100%;
+          height: auto;
+}}}}}
 
-.container {
+footer {
+  width: 100%;
+  min-height: $footer_height;
   background: #fff;
+  margin-top: 20px;
+  background: url(/Assets/Background/broken_noise.png);
+  box-shadow: inset 0 2px 2px rgba(0,0,0,.5);
+  color: #999;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-shadow: 0px 2px 2px rgba(0,0,0,.5);
+  a { color: #396081;
+    &:hover {
+      color: #6C9DC7;
+      text-decoration: none;
+  }}
+  .menu {
+    text-align: center;
+    ul {
+      display: inline-block;
+      margin: 10px auto;
+      list-style: none;
+      li {
+        float: left;
+        margin: 0px 5px;
+}}}}
+
+.navbar {
+  margin-bottom: 19px;
+  background: url(/Assets/Background/cream_dust.png);
+  background: url(/Assets/Background/broken_noise.png);
+  box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0 inset, rgba(0, 0, 0, 0.8) 0 1px 7px 0px;
+  border-bottom: 0;
 }
 
 section {  overflow: auto; }
 section.page-header {
+  box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
+  border-bottom: 1px solid #121212;
+  color: #999;
   .facebook-profile {
     .thumbnail {
       overflow: auto;
@@ -40,37 +100,107 @@ section.page-body {
     h1 { margin-bottom: 50px; }
 }}
 
+.panel-default {
+  background: url(/Assets/Background/broken_noise.png);
+  box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0 inset, rgba(0, 0, 0, 0.8) 0 1px 7px 0px;
+  border: none;
+  color: #999;
+  .panel-heading {
+    background: rgba(255,255,255,.1);
+  }
+  .panel-body {
+    box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0 inset, rgba(0, 0, 0, 0.8) 0 1px 7px 0px;
+    background: url(/Assets/Background/broken_noise.png);
+  }
+  .table-bordered {
+    td { border-color: #111; }
+  }
+}
+
+/* The different views */
 .home {
   &.index {
+    background: none!important;
+    box-shadow: none!important;
     .panel-calendar {
-      background: #f5f5f5;
-      border-color: #ddd;
+      // position: relative;
+      background: none;
+      // background: #f5f5f5;
+      // border-color: #ddd;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border: none;
+      &:before {
+        position: absolute;
+        content: " ";
+        height: 100%;
+        width: 100%;
+        // background: rgba(0,0,0,.3);
+        // box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+      }
       > .panel-heading {
         color: #333;
-        background-color: #f5f5f5;
+        // background-color: #f5f5f5;
+        // background: rgba(0,0,0,.3);
         border-color: #ddd;
         padding: 10px 15px 0;
         border-bottom: 0;
         .nav-tabs {
-          > li { 
+          border: none;
+          > li {
             width: (100%/7);
             text-align: center;
+            > a {
+              border: none;
+              &:hover {
+                position: relative;
+                border: none;
+                box-shadow: rgba(255, 255, 255, 0.1) 0 -1px 0 inset, rgba(0, 0, 0, 0.8) 0 -1px 7px 0px;
+                background: url(/Assets/Background/broken_noise.png);
+
+                &:before {
+                  position: absolute;
+                  content: " ";
+                  width: 100%;
+                  height: 100%;
+                  left: 0;
+                  top: 0;
+                  display: block;
+                  background: rgba(255,255,255,.08);
+            }}}
             &:last-child { float: right;
               > a { margin-right: 0; }
-      }}}}
+            }
+            &.active {
+              box-shadow: rgba(255, 255, 255, 0.1) 0 -1px 0 inset, rgba(0, 0, 0, 0.8) 0 -1px 7px 0px;
+              > a {
+                border: none;
+                background: url(/Assets/Background/broken_noise.png);
+                &:hover { box-shadow: none;
+                  &:before { background: none; }
+      }}}}}}
       > .panel-body {
+        position: relative;
         margin: 0 15px 10px;
-        border-width: 0 1px 1px;
-        border-color: #ddd;
-        border-style: solid;
-        background: #fff;
+        // border-width: 0 1px 1px;
+        // border-color: #ddd;
+        // border-style: solid;
+        border: none;
+        // background: #fff;
+        box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0 inset, rgba(0, 0, 0, 0.8) 0 1px 7px 0px;
+        background: url(/Assets/Background/broken_noise.png);
     }}
 
     .panel-upcoming, .panel-released {
-      border-color: #ddd;
+      // border-color: #ddd;
+      border: none;
+      box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0 inset, rgba(0, 0, 0, 0.8) 0 1px 7px 0px;
+      background: url(/Assets/Background/broken_noise.png);
+      color: #999;
       > .panel-heading {
         position: relative;
         border-bottom: 0;
+        background: rgba(255,255,255,.1);
         &:after {
           content: ' ';
           position: absolute;
@@ -78,12 +208,15 @@ section.page-body {
           right: 0;
           top: 0;
           bottom: 0;
-    }}}
+      }}
+      .table-bordered {
+        td { border-color: #111; }
+    }}
     .panel-upcoming {
-      > .panel-heading:after {  background-color: rgba(255,255,0,.3); }
+      > .panel-heading { .depth:after { color: rgba(0, 173, 255, 0.2); } }
     }
     .panel-released {
-      > .panel-heading:after { background-color: rgba(0,255,0,.3); }
+      > .panel-heading { .depth:after { color: rgba(112, 255, 0, 0.2); } }
     }
     .panel-default {
       > .panel-heading { border-bottom: 0; }
@@ -95,6 +228,10 @@ section.page-body {
       .media-body { line-height: 34px;
         p { margin: 0; }
     }}
+    .table-bordered {
+      background: rgba(255,255,255,.1);
+      box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0 inset, rgba(0, 0, 0, 0.8) 0 1px 7px 0px;
+    }
     .search-results {
       margin-top: 10px;
       .progress { margin-bottom: 0; }
@@ -135,6 +272,8 @@ section.page-body {
       width: 100%;
       height: 100%;
       border: none;
+      background: none;
+      color: #999;
 }}}
 
 .save-group {

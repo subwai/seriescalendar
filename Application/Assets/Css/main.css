@@ -1,107 +1,168 @@
-/* line 1, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
-body { background-color: #333; background: url("/Assets/Background/seamless_pattern.jpg") repeat; }
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
+/* line 5, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+html, body { height: 100%; max-height: 100%; }
 
 /* line 6, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
-nav { margin-bottom: 19px; }
+body { background-color: #333; background: url(/Assets/Background/zwartevilt.png); }
 
-/* line 10, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
-.container { background: #fff; }
+/* line 11, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.site-wrapper { height: 100%; margin: 0 auto -170px; padding: 0 0 170px; }
+/* line 15, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.site-wrapper .page-wrapper { height: 100%; margin: -71px auto 170px; padding-top: 71px; }
+/* line 19, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.site-wrapper .page-wrapper .page { height: 100%; margin: 0 auto -15px; padding-bottom: 15px; border-radius: 2px; background: url(/Assets/Background/broken_noise.png); box-shadow: 0 10px 35px 5px rgba(0, 0, 0, 0.5); }
+/* line 26, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.site-wrapper .page-wrapper .page .body-wrapper { height: 100%; margin: -141px auto 0; padding-top: 141px; }
+/* line 30, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.site-wrapper .page-wrapper .page .body-wrapper .page-body { overflow: hidden; max-height: 100%; min-height: 100%; height: auto; }
 
-/* line 14, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 37, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+footer { width: 100%; min-height: 150px; background: #fff; margin-top: 20px; background: url(/Assets/Background/broken_noise.png); box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.5); color: #999; font-family: 'Roboto Condensed', sans-serif; text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5); }
+/* line 47, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+footer a { color: #396081; }
+/* line 48, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+footer a:hover { color: #6C9DC7; text-decoration: none; }
+/* line 52, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+footer .menu { text-align: center; }
+/* line 54, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+footer .menu ul { display: inline-block; margin: 10px auto; list-style: none; }
+/* line 58, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+footer .menu ul li { float: left; margin: 0px 5px; }
+
+/* line 63, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.navbar { margin-bottom: 19px; background: url(/Assets/Background/cream_dust.png); background: url(/Assets/Background/broken_noise.png); box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0 inset, rgba(0, 0, 0, 0.8) 0 1px 7px 0px; border-bottom: 0; }
+
+/* line 71, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 section { overflow: auto; }
 
-/* line 17, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 72, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+section.page-header { box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0; border-bottom: 1px solid #121212; color: #999; }
+/* line 77, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 section.page-header .facebook-profile .thumbnail { overflow: auto; }
-/* line 19, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 79, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 section.page-header .facebook-profile .thumbnail .profile-pic { width: 40px; height: 40px; margin-right: 8px; }
-/* line 24, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 84, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 section.page-header .facebook-profile .thumbnail .profile-details { height: 40px; }
-/* line 26, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 86, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 section.page-header .facebook-profile .thumbnail .profile-details p { font-family: 'lucida grande',tahoma,verdana,arial,sans-serif; font-size: 11px; margin: 0; }
-/* line 31, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 91, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 section.page-header .facebook-profile .thumbnail .profile-details .fb-name { color: #3b5998; font-weight: bold; margin: 2px 0 4px; }
 
-/* line 38, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 98, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 section.page-body .jumbotron { text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
-/* line 40, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 100, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 section.page-body .jumbotron h1 { margin-bottom: 50px; }
 
-/* line 45, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
-.home.index .panel-calendar { background: #f5f5f5; border-color: #ddd; }
-/* line 48, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
-.home.index .panel-calendar > .panel-heading { color: #333; background-color: #f5f5f5; border-color: #ddd; padding: 10px 15px 0; border-bottom: 0; }
-/* line 55, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 103, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.panel-default { background: url(/Assets/Background/broken_noise.png); box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0 inset, rgba(0, 0, 0, 0.8) 0 1px 7px 0px; border: none; color: #999; }
+/* line 108, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.panel-default .panel-heading { background: rgba(255, 255, 255, 0.1); }
+/* line 111, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.panel-default .panel-body { box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0 inset, rgba(0, 0, 0, 0.8) 0 1px 7px 0px; background: url(/Assets/Background/broken_noise.png); }
+/* line 116, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.panel-default .table-bordered td { border-color: #111; }
+
+/* The different views */
+/* line 122, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index { background: none !important; box-shadow: none !important; }
+/* line 125, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index .panel-calendar { background: none; padding-bottom: 0; margin-bottom: 0; border: none; }
+/* line 133, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index .panel-calendar:before { position: absolute; content: " "; height: 100%; width: 100%; }
+/* line 141, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index .panel-calendar > .panel-heading { color: #333; border-color: #ddd; padding: 10px 15px 0; border-bottom: 0; }
+/* line 148, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index .panel-calendar > .panel-heading .nav-tabs { border: none; }
+/* line 150, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .home.index .panel-calendar > .panel-heading .nav-tabs > li { width: 14.28571%; text-align: center; }
-/* line 58, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 153, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index .panel-calendar > .panel-heading .nav-tabs > li > a { border: none; }
+/* line 155, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index .panel-calendar > .panel-heading .nav-tabs > li > a:hover { position: relative; border: none; box-shadow: rgba(255, 255, 255, 0.1) 0 -1px 0 inset, rgba(0, 0, 0, 0.8) 0 -1px 7px 0px; background: url(/Assets/Background/broken_noise.png); }
+/* line 161, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index .panel-calendar > .panel-heading .nav-tabs > li > a:hover:before { position: absolute; content: " "; width: 100%; height: 100%; left: 0; top: 0; display: block; background: rgba(255, 255, 255, 0.08); }
+/* line 171, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .home.index .panel-calendar > .panel-heading .nav-tabs > li:last-child { float: right; }
-/* line 59, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 172, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .home.index .panel-calendar > .panel-heading .nav-tabs > li:last-child > a { margin-right: 0; }
-/* line 61, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
-.home.index .panel-calendar > .panel-body { margin: 0 15px 10px; border-width: 0 1px 1px; border-color: #ddd; border-style: solid; background: #fff; }
-/* line 69, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
-.home.index .panel-upcoming, .home.index .panel-released { border-color: #ddd; }
-/* line 71, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
-.home.index .panel-upcoming > .panel-heading, .home.index .panel-released > .panel-heading { position: relative; border-bottom: 0; }
-/* line 74, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 174, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index .panel-calendar > .panel-heading .nav-tabs > li.active { box-shadow: rgba(255, 255, 255, 0.1) 0 -1px 0 inset, rgba(0, 0, 0, 0.8) 0 -1px 7px 0px; }
+/* line 176, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index .panel-calendar > .panel-heading .nav-tabs > li.active > a { border: none; background: url(/Assets/Background/broken_noise.png); }
+/* line 179, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index .panel-calendar > .panel-heading .nav-tabs > li.active > a:hover { box-shadow: none; }
+/* line 180, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index .panel-calendar > .panel-heading .nav-tabs > li.active > a:hover:before { background: none; }
+/* line 182, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index .panel-calendar > .panel-body { position: relative; margin: 0 15px 10px; border: none; box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0 inset, rgba(0, 0, 0, 0.8) 0 1px 7px 0px; background: url(/Assets/Background/broken_noise.png); }
+/* line 194, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index .panel-upcoming, .home.index .panel-released { border: none; box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0 inset, rgba(0, 0, 0, 0.8) 0 1px 7px 0px; background: url(/Assets/Background/broken_noise.png); color: #999; }
+/* line 200, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index .panel-upcoming > .panel-heading, .home.index .panel-released > .panel-heading { position: relative; border-bottom: 0; background: rgba(255, 255, 255, 0.1); }
+/* line 204, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .home.index .panel-upcoming > .panel-heading:after, .home.index .panel-released > .panel-heading:after { content: ' '; position: absolute; left: 0; right: 0; top: 0; bottom: 0; }
-/* line 83, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
-.home.index .panel-upcoming > .panel-heading:after { background-color: rgba(255, 255, 0, 0.3); }
-/* line 86, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
-.home.index .panel-released > .panel-heading:after { background-color: rgba(0, 255, 0, 0.3); }
-/* line 89, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 213, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index .panel-upcoming .table-bordered td, .home.index .panel-released .table-bordered td { border-color: #111; }
+/* line 216, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index .panel-upcoming > .panel-heading .depth:after { color: rgba(0, 173, 255, 0.2); }
+/* line 219, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.home.index .panel-released > .panel-heading .depth:after { color: rgba(112, 255, 0, 0.2); }
+/* line 222, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .home.index .panel-default > .panel-heading { border-bottom: 0; }
 
-/* line 95, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 228, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .edit_calendar.index .add-series .media-body { line-height: 34px; }
-/* line 96, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 229, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .edit_calendar.index .add-series .media-body p { margin: 0; }
-/* line 98, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 231, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.edit_calendar.index .table-bordered { background: rgba(255, 255, 255, 0.1); box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0 inset, rgba(0, 0, 0, 0.8) 0 1px 7px 0px; }
+/* line 235, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .edit_calendar.index .search-results { margin-top: 10px; }
-/* line 100, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 237, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .edit_calendar.index .search-results .progress { margin-bottom: 0; }
 
-/* line 105, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 242, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .series.create .input-group { width: 100%; }
-/* line 106, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 243, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .series.create .input-group input { font-size: 21px; }
-/* line 109, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 246, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .series.create .release-week-day-group select { padding: 0; padding-left: 15px; }
-/* line 112, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 249, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .series.create .description-group textarea { resize: vertical; }
-/* line 117, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 254, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .series.index .table-group-addon .btn { width: 50%; }
-/* line 118, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 255, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .series.index .table-group-addon .btn.subscribed .glyphicon { color: #B64242; }
 
 /* General stuff */
-/* line 123, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 260, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .table { height: 100%; }
-/* line 125, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 262, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .table td { height: 100%; }
-/* line 127, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 264, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .table td .td-content { width: 100%; height: 100%; overflow: hidden; }
-/* line 132, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 269, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .table .table-group-addon { padding: 0; }
-/* line 134, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
-.table .table-group-addon .btn { width: 100%; height: 100%; border: none; }
+/* line 271, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+.table .table-group-addon .btn { width: 100%; height: 100%; border: none; background: none; color: #999; }
 
-/* line 142, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 281, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .save-group .input-group button { width: 100%; }
-/* line 144, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 283, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .save-group .progress { margin-bottom: 0; }
-/* line 145, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 284, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .save-group .progress .progress-bar { -webkit-transition-duration: .3s; transition-duration: .3s; }
-/* line 148, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 287, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .save-group .progress .progress-bar.no-transition { -webkit-transition: none; transition: none; }
 
-/* line 153, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 292, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .depth { display: block; color: black; font-family: Arial, sans-serif; font-weight: bold; position: relative; }
 
-/* line 161, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 300, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .depth:before, .depth:after { content: attr(title); color: rgba(255, 255, 255, 0.3); position: absolute; }
 
-/* line 167, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 306, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .depth:before { top: 1px; left: 1px; }
 
-/* line 168, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
+/* line 307, D:/inetpub/wwwroot/Seriescalendar/www/application/Assets/Sass/main.scss */
 .depth:after { top: 2px; left: 2px; }
